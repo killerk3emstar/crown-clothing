@@ -1,14 +1,14 @@
 .categories-container {
   background-color: aqua;
   padding: 10px;
-}
 
-.categories-container .category-container {
-  background-color: coral;
-  padding: 10px;
-}
+  .category-container {
+    background-color: coral;
+    padding: 10px;
 
-.categories-container .category-container .category-body-container {
-  background-color: darkseagreen;
-  padding: 10px;
+    .category-body-container {
+      background-color: darkseagreen;
+      padding: 10px;
+    }
+  }
 }
