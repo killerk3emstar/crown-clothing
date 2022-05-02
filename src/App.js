@@ -1,3 +1,5 @@
+import "./categories.styles.scss";
+
 const App = () => {
   const categories = [
     {
@@ -7,8 +9,8 @@ const App = () => {
     },
     {
       id: 1,
-      title: "Shoes",
       image: "",
+      title: "Sneakers",
     },
     {
       id: 2,
@@ -21,8 +23,8 @@ const App = () => {
       image: "",
     },
     {
-      id: 4,
       title: "Mens",
+      id: 4,
       image: "",
     },
   ];
