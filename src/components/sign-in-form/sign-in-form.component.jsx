@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../../contexts/user.context";
 import {
   createUserDocumentFromAuth,
   signInAuthWithEmailAndPassword,
@@ -22,6 +23,8 @@ const SignInForm = () => {
 
   const { email, password } = formFieldsValues;
 
+  const { setCurrentUser } = useContext(UserContext);
+
   const handleChange = (e) => {
     const { value, name } = e.target;
     setFormFieldsValues({ ...formFieldsValues, [name]: value });
@@ -33,16 +36,14 @@ const SignInForm = () => {
 
   const logGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
-    const userDocRef = await createUserDocumentFromAuth(user);
-    console.log(userDocRef);
+    await createUserDocumentFromAuth(user);
   };
 
   const handleSumbit = async (e) => {
     e.preventDefault();
     try {
       const { user } = await signInAuthWithEmailAndPassword(email, password);
-      const userDocRef = await createUserDocumentFromAuth(user);
-      console.log(userDocRef);
+      setCurrentUser(user);
       resetFormFields();
     } catch (err) {
       if (err.code === "auth/user-not-found") {
