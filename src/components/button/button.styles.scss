@@ -14,6 +14,10 @@
   display: flex;
   justify-content: center;
   transition-duration: 500ms;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 
   &:hover {
     background-color: white;

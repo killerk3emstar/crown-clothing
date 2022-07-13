@@ -2,7 +2,6 @@ import { createContext, useState, useEffect } from "react";
 import {
   createUserDocumentFromAuth,
   onAuthStateChangedListener,
-  signOutUser,
 } from "../utilities/firebase/firebase.utilities";
 
 // accual value we access
